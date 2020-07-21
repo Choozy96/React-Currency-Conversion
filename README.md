@@ -1,1 +1,10 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Currency conversion react app made with:
+- React
+- NextJS framework
+- written in TypeScript
+
+with currency conversion rates from OpenExchangeRates api (https://openexchangerates.org/)
+
+run this project with command:
+- yarn start , or
+- npm start

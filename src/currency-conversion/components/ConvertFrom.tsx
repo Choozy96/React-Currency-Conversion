@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-
-import '../public/i18n';
+import '../../../public/i18n';
 import { useTranslation } from 'react-i18next';
 
 interface IProps {
@@ -12,8 +11,9 @@ interface IProps {
 
 const ConvertFrom = (props : IProps) => {
 
+    const {t} = useTranslation();
+
     const currencyList = props.currencyList;
-    // const currencyList: Array<string> = ["SGD", "USD"];
 
     function handleChange(event) {
         props.onConvertFromChange(event.target.value);
@@ -27,15 +27,10 @@ const ConvertFrom = (props : IProps) => {
         return elementList;
     }
 
-    function renderFormLabel() {
-        const { t, i18n } = useTranslation();
-        return <>{t('Convert From')}</>
-    }
-
     return (
         <>
-        <Form.Label>{renderFormLabel()}:</Form.Label>
-        <Form.Control as = "select" onChange={ handleChange }>
+        <Form.Label>{t('convert-from')}</Form.Label>
+        <Form.Control as = "select" onChange={ handleChange } value={props.convertFrom}>
             {renderCurrencyList(currencyList)}
         </Form.Control>
         </>

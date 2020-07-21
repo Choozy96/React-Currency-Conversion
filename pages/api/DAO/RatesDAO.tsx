@@ -4,7 +4,8 @@ export class RatesDAO {
     private apiKey: string;
 
     constructor() {
-        this.apiKey = "1c539a8c216f4f928fe8f48221af28d3";
+        this.apiKey = String(process.env.OPEN_EXCHANGE_API_KEY);
+        console.log(this.apiKey)
     }
 
     async getExchangeRates() {

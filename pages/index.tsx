@@ -1,7 +1,8 @@
 import Head from 'next/head';
-import App from '../components/App';
-import ChangeLanguage from '../components/ChangeLanguage'
+import CurrencyConversionContainer from '../src/currency-conversion/container/CurrencyConversionContainer';
+import ChangeLanguage from '../src/change-language/components/ChangeLanguage'
 import i18next from 'i18next';
+import { Container } from 'react-bootstrap';
 
 export default function Home() {
 
@@ -16,14 +17,12 @@ export default function Home() {
       <title>Currency Exchange</title>
     </Head>
     <body>
-      <div className="container">
-        <div className="card">
-          <App />
-        </div>
-        <footer className="blockquote-footer">
+        <Container className="d-flex justify-content-center">
+          <CurrencyConversionContainer />
+        </Container>
+        <footer>
           <ChangeLanguage />
         </footer>
-      </div>
     </body>
     
     </>

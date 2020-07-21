@@ -1,6 +1,11 @@
 import fetch from "node-fetch";
+import { injectable, inject } from "inversify";
+import "reflect-metadata";
+import { SupportedCurrencyDAOInterface } from "../interfaces";
+import { TYPES } from "../types";
 
-export class SupportedCurrencyDAO {
+@injectable()
+export class SupportedCurrencyDAO implements SupportedCurrencyDAOInterface{
 
     async getSupportedCurrency() {
         const response = await fetch("https://openexchangerates.org/api/currencies.json");
@@ -9,4 +14,4 @@ export class SupportedCurrencyDAO {
     }
 }
 
-export default new SupportedCurrencyDAO();
+export default SupportedCurrencyDAO;

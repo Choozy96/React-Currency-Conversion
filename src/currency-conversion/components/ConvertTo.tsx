@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-
-import '../public/i18n';
+import '../../../public/i18n';
 import { useTranslation } from 'react-i18next';
 
 interface IProps {
@@ -11,6 +10,9 @@ interface IProps {
 }
 
 const ConvertTo = (props : IProps) => {
+
+    const {t} = useTranslation();
+
     const currencyList: Array<string> = props.currencyList;
     function handleChange(event) {
         props.onConvertToChange(event.target.value);
@@ -19,20 +21,15 @@ const ConvertTo = (props : IProps) => {
     function renderCurrencyList(currencyList: Array<string>) {
         let elementList = [];
         for (const currency of currencyList) {
-            elementList.push(<option value={currency}>{currency}</option>)
+            elementList.push(<option key={currency} value={currency}>{currency}</option>)
         }
         return elementList;
     }
 
-    function renderFormLabel() {
-        const { t, i18n } = useTranslation();
-        return <>{t('Convert To')}</>
-    }
-
     return (
         <>
-        <Form.Label>{renderFormLabel()}:</Form.Label>
-        <Form.Control as = "select" onChange={ handleChange }>
+        <Form.Label>{t('convert-to')}</Form.Label>
+        <Form.Control as = "select" onChange={ handleChange } value={props.convertTo}>
             {renderCurrencyList(currencyList)}
         </Form.Control>
         </>

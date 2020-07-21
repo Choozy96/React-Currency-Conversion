@@ -6,16 +6,16 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
-      "Convert From": "Convert From",
-      "Convert To": "Convert To",
-      "Quantity": "Quantity"
+      "convert-from": "Convert From",
+      "convert-to": "Convert To",
+      "quantity": "Quantity"
     }
   },
   cn: {
     translation: {
-      "Convert From": "转换货币",
-      "Convert To": "回收货币",
-      "Quantity": "数量"
+      "convert-from": "转换货币",
+      "convert-to": "回收货币",
+      "quantity": "数量"
     }
   }
 };
