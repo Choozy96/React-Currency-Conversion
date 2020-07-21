@@ -1,3 +1,5 @@
+# Currency Conversion App
+ 
 Currency conversion react app made with:
 - React
 - NextJS framework
